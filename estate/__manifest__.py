@@ -15,6 +15,9 @@
         'base',
     ],    
     'application': True,
+    "data": [
+        "models/data/security/ir.model.access.csv"
+    ],
 
 
 }
