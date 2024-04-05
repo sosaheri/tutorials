@@ -8,18 +8,18 @@ class EstateProperty(models.Model):
 
     active = fields.Boolean('Active', default=False)
 
-    name = fields.Char('Property Name', required=True)
-    description = fields.Text('Property Description')
-    postcode = fields.Char('Property postcode')
-    date_availability = fields.Date('Property availability', copy=False, default=lambda self: fields.Date.today() + relativedelta(months=3))
-    expected_price = fields.Float('Property expected price', required=True)
-    selling_price = fields.Float('Property selling price', readonly=True, copy=False)
-    bedrooms = fields.Integer('Property number bedrooms', default=2)
-    living_area = fields.Integer('Property living')
-    facades = fields.Integer('Property facades')
-    garage = fields.Boolean('Property garage')
-    garden = fields.Boolean('Property garde')
-    garden_area = fields.Integer('Property area garde')
+    name = fields.Char('Title', required=True)
+    description = fields.Text('Description')
+    postcode = fields.Char('Postcode')
+    date_availability = fields.Date('Date Availability', copy=False, default=lambda self: fields.Date.today() + relativedelta(months=3))
+    expected_price = fields.Float('Expected price', required=True)
+    selling_price = fields.Float('Selling price', readonly=True, copy=False)
+    bedrooms = fields.Integer('Bedrooms', default=2)
+    living_area = fields.Integer('Living Area (sqm)')
+    facades = fields.Integer('Facades')
+    garage = fields.Boolean('Garage')
+    garden = fields.Boolean('Garden')
+    garden_area = fields.Integer('Garden Area (sqm)')
     garden_orientation  = fields.Selection(
         string='Orientation',
         selection=[('North', 'North'), ('South', 'South'), ('West', 'West'), ('East', 'East')],
